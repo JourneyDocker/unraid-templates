@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Plex Auto Languages</Name>
+  <Repository>journeyover/plex-auto-languages</Repository>
+  <Registry>https://hub.docker.com/r/journeyover/plex-auto-languages</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/JourneyDocker/Plex-Auto-Languages/issues</Support>
+  <Project>https://github.com/JourneyDocker/Plex-Auto-Languages</Project>
+  <Branch>
+    <Tag>latest</Tag>
+    <TagDescription>Latest Stable Release</TagDescription>
+  </Branch>
+  <Branch>
+    <Tag>main</Tag>
+    <TagDescription>Latest Commit From The Main Branch</TagDescription>
+  </Branch>
+  <Overview>Plex Auto Languages enhances your Plex experience by automatically updating the audio and subtitle settings of TV shows based on your preferences. Similar to Netflix, it remembers your language preferences for each TV show without interfering with your global settings or other users preferences.</Overview>
+  <Beta>False</Beta>
+  <Category>MediaApp:Video MediaServer:Video Tools:Utilities Status:Stable</Category>
+  <ExtraSearchTerms>Plex auto language TV show episode Netflix automation</ExtraSearchTerms>
+  <TemplateURL>https://raw.githubusercontent.com/JourneyDocker/unraid-templates/main/templates/plex-auto-languages.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/JourneyDocker/unraid-templates/main/images/plex-auto-languages-icon.png</Icon>
+  <Maintainer>
+    <WebPage>https://github.com/journeyover</WebPage>
+  </Maintainer>
+  <Requires/>
+  <Config Name="Host Path for /config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Plex - URL" Target="PLEX_URL" Default="http://IP_ADDRESS:32400" Mode="" Description="URL to your Plex server" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Plex - Token" Target="PLEX_TOKEN" Default="" Mode="" Description="Token for your Plex server" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="Update Level" Target="UPDATE_LEVEL" Default="show" Mode="" Description="Update language for the entire show or only for the current season. Accepted Values 'show or season'" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Update Strategy" Target="UPDATE_STRATEGY" Default="next" Mode="" Description="Update all episodes of the show/season or only the next ones. Accepted values 'next or all'" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Trigger on Play" Target="TRIGGER_ON_PLAY" Default="true" Mode="" Description="Whether or not playing a file should trigger a language update, defaults to 'true'" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Trigger on Scan" Target="TRIGGER_ON_SCAN" Default="true" Mode="" Description="Whether or not scanning the library for new files should trigger a language update, defaults to 'true'" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Trigger on Activity" Target="TRIGGER_ON_ACTIVITY" Default="false" Mode="" Description="Whether or not navigating the Plex library should trigger a language update, defaults to 'false'" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Refresh Library on Scan" Target="REFRESH_LIBRARY_ON_SCAN" Default="true" Mode="" Description="Whether or not to refresh the cached library whenever the Plex server scans its own library, defaults to 'true'" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Ignore Labels" Target="IGNORE_LABELS" Default="PAL_IGNORE" Mode="" Description="Plex Auto Languages will ignore shows with any of the following Plex labels, separated by commas: LABEL1,LABEL2" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Scheduler Enable" Target="SCHEDULER_ENABLE" Default="true" Mode="" Description="Whether of not to enable the scheduler, defaults to 'true'" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Scheduler Scheduled Time" Target="SCHEDULER_SCHEDULE_TIME" Default="02:00" Mode="" Description="The time at which the scheduler start its task with the format 'HH:MM', defaults to '02:00'" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Debug Mode" Target="DEBUG" Default="false" Mode="" Description="Whether or not to enable the debug mode, defaults to 'false'" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+</Container>
