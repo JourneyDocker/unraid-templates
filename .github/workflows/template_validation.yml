@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@main
+        uses: actions/checkout@v5
 
       - name: Validate XML files
-        uses: action-pack/valid-xml@master
+        uses: action-pack/valid-xml@v1
         with:
           path: "templates/"
           file-endings: ".xml"
